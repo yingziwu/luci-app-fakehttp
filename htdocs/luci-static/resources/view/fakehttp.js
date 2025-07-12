@@ -42,32 +42,32 @@ return view.extend({
     o.nocreate = true;
     o.rmempty = false;
 
-    // Payload
+    // Payload Settings
     s = m.section(form.GridSection, "payload", _("Payload Settings"));
     s.addremove = true;
     s.anonymous = true;
     s.sortable = true;
     s.nodescriptions = true;
 
-    o = s.option(form.Flag, 'enabled', _('Enable'))
+    o = s.option(form.Flag, "enabled", _("Enable"));
     o.default = 0;
-    o.editable = true
+    o.editable = true;
     o.rmempty = false;
 
     o = s.option(form.ListValue, "type", _("Type"));
-    o.value("h", "HTTP");
-    o.value("e", "HTTPS");
-    o.value("b", "Binary");
+    o.value("http", "HTTP");
+    o.value("https", "HTTPS");
+    o.value("binary", "Binary");
     o.editable = true;
     o.rmempty = false;
 
-    o = s.option(form.Value, 'payload', _("Payload"))
+    o = s.option(form.Value, "payload", _("Payload"));
     o.editable = true;
     o.rmempty = false;
 
-    o = s.option(form.Value, 'comment', _("Comment"))
+    o = s.option(form.Value, "comment", _("Comment"));
     o.editable = true;
-    o.default = ""
+    o.default = "";
 
     return m.render();
   },
